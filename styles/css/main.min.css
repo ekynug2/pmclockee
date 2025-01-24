@@ -21,10 +21,10 @@
 body {
     background: linear-gradient(
         45deg, 
-        #1a1b1c, 
-        #262728, 
-        #3a3b3c, 
-        #4a4b4c
+        #f5794d, 
+        #cb1010, 
+        #7e1f09, 
+        #3f0e03
     );
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
