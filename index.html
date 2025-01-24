@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Digital Clock</title>
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="styles/css/main.min.css" media="all">
+</head>
+<body>
+
+<!-- Clock Container -->
+<section class="clock-container">
+	<!-- Hours Box -->
+	<div class="hours box">
+		<!-- Hours Circle -->
+		<svg>
+			<circle cx="100" cy="100" r="80"></circle>
+			<circle cx="100" cy="100" r="80" id="hours-circle"></circle>
+		</svg>
+		<!-- Hours Dot -->
+		<div class="dot"></div>
+		<!-- Hours Text -->
+		<div class="text">
+			<span id="hours-text">00</span>
+			<span class="name">Hours</span>
+		</div>
+	</div>
+	<!-- Minutes Box -->
+	<div class="minutes box">
+		<!-- Minutes Circle -->
+		<svg>
+			<circle cx="100" cy="100" r="80"></circle>
+			<circle cx="100" cy="100" r="80" id="minutes-circle"></circle>
+		</svg>
+		<!-- Minutes Dot -->
+		<div class="dot"></div>
+		<!-- Minutes Text -->
+		<div class="text">
+			<span id="minutes-text">00</span>
+			<span class="name">Minutes</span>
+		</div>
+	</div>
+	<!-- Seconds Box -->
+	<div class="seconds box">
+		<!-- Seconds Circle -->
+		<svg>
+			<circle cx="100" cy="100" r="80"></circle>
+			<circle cx="100" cy="100" r="80" id="seconds-circle"></circle>
+		</svg>
+		<!-- Seconds Dot -->
+		<div class="dot"></div>
+		<!-- Seconds Text -->
+		<div class="text">
+			<span id="seconds-text">00</span>
+			<span class="name">Seconds</span>
+		</div>
+	</div>
+	<!-- Meridian Box -->
+	<div class="meridian box">
+		<!-- Meridian Circle -->
+		<svg>
+			<circle cx="100" cy="100" r="80"></circle>
+			<circle cx="100" cy="100" r="80" id="meridian-circle"></circle>
+		</svg>
+		<!-- Meridian Dot -->
+		<div class="dot"></div>
+		<!-- Meridian Text -->
+		<div class="text">
+			<span id="meridian-text">AM</span>
+			<span class="date">22-01-2025</span>
+		</div>
+	</div>
+</section>
+
+<!-- Scripts -->
+<script type="text/javascript" src="scripts/main.js"></script>
+</body>
+</html>

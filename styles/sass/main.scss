@@ -1,0 +1,145 @@
+/*
+  ______________________________________________________________________________________________
+ |  Digital Clock Styles                                                                         |
+ |                                                                                              |
+ |  Copyright 2025 ag-sanjjeev                                                                  |
+ |  The source code is licensed under MIT-style License.                                        |
+ |  The usage, permission and condition are applicable to this source code as per license.      |
+ |  That can be found in LICENSE file or at https://opensource.org/licenses/MIT.                |
+ |______________________________________________________________________________________________|
+*/
+
+@use 'reset';
+@use 'variables' as var;
+@use 'functions' as *; // load without namespace
+
+body {
+	background: var.$dark;
+	color: var.$light;
+	width: 100%;
+	height: 100vh;
+}
+
+.clock-container {
+	position: absolute;
+	inset: 0 0 0 0;
+	padding: 0 pixel_to_rem(16);
+	width: 100%;
+	height: 60vh;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	overflow-x: clip;
+}
+
+.box {
+	position: relative;
+	
+	svg {
+		position: relative;
+		width: pixel_to_rem(210);
+		aspect-ratio: 1;
+		transform: rotate(270deg);
+
+		circle {
+			width: 100%;
+			aspect-ratio: 1;
+			fill: transparent;
+			stroke: var.$gray;
+			stroke-width: 5;
+			transform: translate(pixel_to_rem(5), pixel_to_rem(5));
+		}
+	}
+
+	.dot {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		aspect-ratio: 1;
+		display: flex;
+		justify-content: center;
+		z-index: 2;
+		&::before {
+			content: '';
+			position: absolute;
+			top: pixel_to_rem(15);
+			width: pixel_to_rem(20);
+			aspect-ratio: 1;
+			border-radius: 50%;
+		}
+	}
+
+	.text {
+		position: absolute;
+		top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+		font-family: 'arial', sans-serif;
+		.name, .date {
+			display: block;
+			text-align: center;
+		}
+	}
+}
+
+.hours {
+	$color: var.$light-red;
+	svg circle#hours-circle {
+		stroke: $color;
+		stroke-dasharray: 502;
+	}
+	.dot {
+		&::before {
+			background-color: $color;
+			box-shadow: 0 0 pixel_to_rem(30) $color, 0 0 pixel_to_rem(30) $color;
+		}
+	}
+}
+
+.minutes {
+	$color: var.$light-blue;
+	svg circle#minutes-circle {
+		stroke: $color;
+		stroke-dasharray: 502;
+	}
+	.dot {
+		&::before {
+			background-color: $color;
+			box-shadow: 0 0 pixel_to_rem(30) $color, 0 0 pixel_to_rem(30) $color;
+		}
+	}
+}
+
+.seconds {
+	$color: var.$light-green;
+	svg circle#seconds-circle {
+		stroke: $color;
+		stroke-dasharray: 502;
+	}
+	.dot {
+		&::before {
+			background-color: $color;
+			box-shadow: 0 0 pixel_to_rem(30) $color, 0 0 pixel_to_rem(30) $color;
+		}
+	}
+}
+
+.meridian {
+	$color: var.$light-yellow;
+	svg circle#meridian-circle {
+		stroke: $color;
+		stroke-dasharray: 502;
+	}
+	.dot {
+		&::before {
+			background-color: $color;
+			box-shadow: 0 0 pixel_to_rem(30) $color, 0 0 pixel_to_rem(30) $color;
+		}
+	}
+}
+
+#hours-text, #minutes-text, #seconds-text, #meridian-text {	
+	font-size: pixel_to_rem(50);
+	letter-spacing: pixel_to_rem(5);
+}
